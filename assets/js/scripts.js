@@ -113,27 +113,7 @@ class Validator {
   
         this.printMessage(input, errorMessage);
       }
-  
-      // explodir string em array
-      let charArr = input.value.split("");
-  
-      let uppercases = 0;
-      let numbers = 0;
-  
-      for(let i = 0; charArr.length > i; i++) {
-        if(charArr[i] === charArr[i].toUpperCase() && isNaN(parseInt(charArr[i]))) {
-          uppercases++;
-        } else if(!isNaN(parseInt(charArr[i]))) {
-          numbers++;
-        }
-      }
-  
-      if(uppercases === 0 || numbers === 0) {
-        let errorMessage = `A senha precisa de um caractere maiúsculo e um número`;
-  
-        this.printMessage(input, errorMessage);
-      }
-  
+
     }
   
     // método para imprimir mensagens de erro
@@ -176,17 +156,6 @@ class Validator {
     validator.validate(form);
   });
 
-  // tornar o upload de seleção de arquivo como obrigatório
-
-  function validate(){
-    var inp = document.getElementById('upload');
-    if(inp.files.length === 0){
-        alert("Attachment Required");
-        inp.focus();
-
-        return false;
-    }
-}
 
 
   
